@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+
+<meta name="ppck-ver" content="34997971fc23c00c52dab94a57b14be5" />
+
+
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dating Connect - Find Your Perfect Match</title>
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #ff6b6b, #5f27cd);
+            color: #fff;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            padding: 20px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            color: #fff;
+            text-decoration: none;
+        }
+        
+        .logo span {
+            color: #feca57;
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .hero p {
+            font-size: 1.5rem;
+            max-width: 800px;
+            margin: 0 auto 40px;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: #feca57;
+            color: #222;
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+            background: #ff9f43;
+        }
+        
+        /* Features Section */
+        .features {
+            padding: 60px 0;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            margin: 40px 0;
+        }
+        
+        .features h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .feature-card {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.25);
+        }
+        
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: #feca57;
+        }
+        
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            padding: 60px 0;
+        }
+        
+        .testimonials h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+        }
+        
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .testimonial-card {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 30px;
+            border-radius: 15px;
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 15px;
+            object-fit: cover;
+        }
+        
+        .author-info h4 {
+            font-size: 1.1rem;
+        }
+        
+        .author-info p {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 60px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .footer-links a {
+            color: #fff;
+            text-decoration: none;
+        }
+        
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Access Denied Styles */
+        .access-denied {
+            text-align: center;
+            padding: 100px 20px;
+            display: none;
+        }
+        
+        .access-denied h1 {
+            font-size: 3rem;
+            margin-bottom: 30px;
+            color: #ff6b6b;
+        }
+        
+        .access-denied p {
+            font-size: 1.5rem;
+            margin-bottom: 40px;
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.2rem;
+            }
+            
+            .features-grid, .testimonial-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .cta-button {
+                padding: 12px 30px;
+                font-size: 1rem;
+            }
+        }
+        
+        /* Animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .animate {
+            animation: fadeIn 1s ease forwards;
+        }
+        
+        .delay-1 { animation-delay: 0.2s; }
+        .delay-2 { animation-delay: 0.4s; }
+        .delay-3 { animation-delay: 0.6s; }
+        .delay-4 { animation-delay: 0.8s; }
+    </style>
+</head>
+<body>
+    <!-- Main Landing Page (for Facebook users) -->
+    <div id="main-landing">
+        <div class="container">
+            <header>
+                <a href="#" class="logo">Dating <span>Connect</span></a>
+            </header>
+            
+            <section class="hero">
+                <h1 class="animate">Find Your Perfect Match Today!</h1>
+                <p class="animate delay-1">Join thousands of singles in your area looking for meaningful connections. It's time to meet someone special.</p>
+                <a href="https://smsecureddt.com/SXTJ08Ol3S" class="cta-button animate delay-2">Join Now - It's Free!</a>
+            </section>
+            
+            <section class="features">
+                <h2 class="animate delay-1">Why Choose Dating Connect?</h2>
+                <div class="features-grid">
+                    <div class="feature-card animate delay-2">
+                        <div class="feature-icon">❤️</div>
+                        <h3>Smart Matching</h3>
+                        <p>Our advanced algorithm connects you with compatible partners based on your interests and personality.</p>
+                    </div>
+                    <div class="feature-card animate delay-3">
+                        <div class="feature-icon">🔒</div>
+                        <h3>Verified Profiles</h3>
+                        <p>All profiles are manually verified to ensure authenticity and your safety.</p>
+                    </div>
+                    <div class="feature-card animate delay-4">
+                        <div class="feature-icon">💬</div>
+                        <h3>Real Connections</h3>
+                        <p>Chat and video call features make it easy to connect before meeting in person.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="testimonials">
+                <h2 class="animate delay-2">Success Stories</h2>
+                <div class="testimonial-grid">
+                    <div class="testimonial-card animate delay-3">
+                        <p class="testimonial-text">"I was skeptical about online dating, but Dating Connect changed my life. I met my partner here and we're getting married next year!"</p>
+                        <div class="testimonial-author">
+                            <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Sarah J." class="author-avatar">
+                            <div class="author-info">
+                                <h4>Sarah J.</h4>
+                                <p>Found love in 2023</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card animate delay-4">
+                        <p class="testimonial-text">"The quality of matches on Dating Connect is unmatched. I went on several great dates within the first week!"</p>
+                        <div class="testimonial-author">
+                            <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Michael T." class="author-avatar">
+                            <div class="author-info">
+                                <h4>Michael T.</h4>
+                                <p>Member since 2022</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card animate">
+                        <p class="testimonial-text">"As a busy professional, I didn't have time to meet people. Dating Connect made it so easy to connect with like-minded singles."</p>
+                        <div class="testimonial-author">
+                            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Jennifer L." class="author-avatar">
+                            <div class="author-info">
+                                <h4>Jennifer L.</h4>
+                                <p>Found her match in 2 weeks</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="hero" style="padding-bottom: 100px;">
+                <h2 class="animate delay-3">Ready to Meet Someone Special?</h2>
+                <p class="animate delay-4">Create your free profile today and start your journey to finding love.</p>
+                            <a href="https://smartdt-secure.com/SN0MQ3OfyS" class="cta-button animate delay-2">Join Now - It's Free!</a>
+            </section>
+
+            <footer>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Contact Us</a>
+                </div>
+                <p>&copy; 2023 Dating Connect. All rights reserved.</p>
+            </footer>
+        </div>
+    </div>
+    
+    <!-- Access Denied Page (for non-Facebook users) -->
+    <div id="access-denied" class="access-denied">
+        <div class="container">
+            <h1>Access Restricted</h1>
+            <p>Sorry, this website is only accessible to users coming from Facebook.</p>
+            <p>Please visit us through Facebook to access Dating Connect.</p>
+        </div>
+    </div>
+    
+    <!-- Redirect Page (for other traffic sources) -->
+    <div id="redirect-page" class="access-denied">
+        <div class="container">
+            <h1>Special Offer Available</h1>
+            <p id="traffic-source-message">We have a special dating offer for users coming from your source.</p>
+            <p>You will be redirected to our exclusive partner offer in <span id="countdown">5</span> seconds...</p>
+            <a href="https://securecd-smrtnd.com/SsOu53Wk2S" id="manual-redirect" style="color: #feca57; font-weight: bold;">Click here if you're not redirected automatically</a>
+        </div>
+    </div>
+    
+    <script>
+        // Traffic source detection and routing
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get referrer information
+            const referrer = document.referrer.toLowerCase();
+            const isFacebook = referrer.includes('facebook.com') || 
+                               referrer.includes('fb.com') || 
+                               referrer.includes('m.facebook.com') ||
+                               window.location.href.includes('fbclid');
+            
+            // Get UTM parameters
+            const urlParams = new URLSearchParams(window.location.search);
+            const utmSource = urlParams.get('utm_source');
+            
+            // Check if user is coming from Facebook
+            if (isFacebook || (utmSource && utmSource.toLowerCase().includes('facebook'))) {
+                // Show main landing page for Facebook users
+                document.getElementById('main-landing').style.display = 'block';
+                document.getElementById('access-denied').style.display = 'none';
+                document.getElementById('redirect-page').style.display = 'none';
+            } 
+            else if (referrer || utmSource) {
+                // Show redirect page for other traffic sources
+                document.getElementById('main-landing').style.display = 'none';
+                document.getElementById('access-denied').style.display = 'none';
+                document.getElementById('redirect-page').style.display = 'block';
+                
+                // Detect traffic source
+                let sourceName = 'your current source';
+                if (utmSource) {
+                    sourceName = utmSource;
+                } else if (referrer.includes('google.com')) {
+                    sourceName = 'Google';
+                } else if (referrer.includes('twitter.com')) {
+                    sourceName = 'Twitter';
+                } else if (referrer.includes('instagram.com')) {
+                    sourceName = 'Instagram';
+                } else if (referrer) {
+                    // Extract domain name from referrer
+                    const domain = referrer.replace('http://', '').replace('https://', '').split('/')[0];
+                    sourceName = domain;
+                }
+                
+                // Update message with traffic source
+                document.getElementById('traffic-source-message').textContent = 
+                    `We have a special dating offer for users coming from ${sourceName}.`;
+                
+                // Countdown and redirect
+                let seconds = 5;
+                const countdownElement = document.getElementById('countdown');
+                const countdownInterval = setInterval(function() {
+                    seconds--;
+                    countdownElement.textContent = seconds;
+                    
+                    if (seconds <= 0) {
+                        clearInterval(countdownInterval);
+                        window.location.href = 'https://securecd-smrtnd.com/SsOu53Wk2S';
+                    }
+                }, 1000);
+                
+                // Manual redirect link
+                document.getElementById('manual-redirect').addEventListener('click', function(e) {
+                    e.preventDefault();
+                    window.location.href = 'https://sparkleslove.com/DmdPkJhv?aid=fzfbpffzab&kid=gkkxadkxfdg';
+                });
+            } 
+            else {
+                // Show access denied for direct visitors
+                document.getElementById('main-landing').style.display = 'none';
+                document.getElementById('access-denied').style.display = 'block';
+                document.getElementById('redirect-page').style.display = 'none';
+            }
+            
+            // Add animations when elements come into view
+            const animateElements = document.querySelectorAll('.animate');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            animateElements.forEach(element => {
+                element.style.opacity = 0;
+                element.style.transform = 'translateY(20px)';
+                element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(element);
+            });
+        });
+    </script>
+
+
+<script type="text/javascript">
+   var uid = '492978';
+   var wid = '743594';
+   var pop_fback = 'up';
+   var pop_tag = document.createElement('script');pop_tag.src='//cdn.popcash.net/show.js';document.body.appendChild(pop_tag);
+   pop_tag.onerror = function() {pop_tag = document.createElement('script');pop_tag.src='//cdn2.popcash.net/show.js';document.body.appendChild(pop_tag)};
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+</body>
+</html>
